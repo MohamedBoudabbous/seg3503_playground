@@ -1,3 +1,5 @@
 #!/bin/bash
 
-java -jar  user-registration-app-0.1.0.jar
+#java -jar  user-registration-app-0.1.0.jar
+
+java --add-opens java.base/java.lang=ALL-UNNAMED -jar user-registration-app-0.1.0.jar
