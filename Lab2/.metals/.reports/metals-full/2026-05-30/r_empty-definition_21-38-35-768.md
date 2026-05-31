@@ -1,3 +1,14 @@
+error id: file://<WORKSPACE>/ecs/test/DateNextDateExceptionTest.java:_empty_/Parameterized#
+file://<WORKSPACE>/ecs/test/DateNextDateExceptionTest.java
+empty definition using pc, found symbol in pc: _empty_/Parameterized#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 218
+uri: file://<WORKSPACE>/ecs/test/DateNextDateExceptionTest.java
+text:
+```scala
 import java.util.LinkedList;
 import java.util.List;
 
@@ -5,7 +16,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-@RunWith(Parameterized.class)
+@RunWith(Parameter@@ized.class)
 
 public class DateNextDateExceptionTest
 {
@@ -39,3 +50,9 @@ public class DateNextDateExceptionTest
 
 
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/Parameterized#

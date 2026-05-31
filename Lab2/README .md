@@ -24,3 +24,77 @@ Pour chaque cas de test, j’ai indiqué le résultat escompté, le résultat ac
 | 14 | Wrong Postal Code format | L’application refuse un code postal contenant uniquement des chiffres. <br><br><img src="testImages/cas14.png" width="500"><br><br><img src="testImages/cas14-verif.png" width="500"> | Succès |
 | 15 | Wrong Postal Code format | L’application refuse un code postal trop court ou ne respectant pas le format attendu. <br><br><img src="testImages/cas15.png" width="500"><br><br><img src="testImages/cas15-verif.png" width="500"> | Succès |
 | 16 | Multiple errors | L’application affiche plusieurs erreurs de validation lorsque plusieurs champs sont invalides en même temps. <br><br><img src="testImages/cas16.png" width="500"><br><br><img src="testImages/cas16-verif.png" width="500"> | Succès |
+
+
+## Exercice 2 - Tests JUnit pour la méthode nextDate
+
+Dans cet exercice, j’ai travaillé sur la méthode nextDate de la classe Date.  
+Cette méthode permet de retourner la date du lendemain à partir d’une date donnée.  
+Les tests doivent vérifier plusieurs situations : les dates normales, les fins de mois, les années bissextiles, les changements d’année, ainsi que les dates invalides qui doivent produire une exception.
+
+L’énoncé demandait de fournir une implémentation explicite avec JUnit 5, puis deux suites de tests paramétrés : une pour les cas valides et une autre pour les cas qui génèrent une exception.
+
+### Exécution des tests fournis
+
+Avant d’ajouter les tests pour la classe Date, j’ai d’abord vérifié que les tests déjà fournis dans le projet ecs fonctionnaient correctement.  
+Les tests de la classe Bit ont été exécutés avec succès. Cette partie permet aussi de vérifier que l’environnement JUnit fonctionne bien.
+
+![Résultat des tests fournis](testImages/date-tests1.png)
+
+### Tests explicites avec JUnit 5
+
+J’ai ensuite créé le fichier DateTest.java.  
+Ce fichier contient les 20 cas de test fournis dans l’énoncé. Chaque cas est écrit séparément avec une méthode de test différente.
+
+Les 15 premiers cas vérifient que la méthode nextDate retourne correctement la date du lendemain.  
+Les 5 derniers cas vérifient que les dates invalides produisent bien une IllegalArgumentException.
+
+![Tests explicites JUnit 5](testImages/date-test-explicit.png)
+
+### Tests paramétrés pour les dates valides
+
+J’ai aussi créé le fichier DateNextDateOkTest.java.  
+Ce fichier contient les cas de test valides sous forme paramétrée.  
+Chaque ligne de données contient une date d’entrée et la date attendue après l’appel de la méthode nextDate.
+
+Cette approche évite de répéter plusieurs méthodes de test presque identiques. Elle permet aussi de regrouper clairement les cas valides dans une seule suite de tests.
+
+![Tests paramétrés valides](testImages/DateNextDateOkTest.png)
+
+### Tests paramétrés pour les exceptions
+
+Pour les dates invalides, j’ai créé le fichier DateNextDateExceptionTest.java.  
+Ce fichier regroupe les cas où la date donnée ne respecte pas les règles imposées, par exemple :
+
+ un jour invalide pour février ;
+
+ une date du 29 février dans une année non bissextile ;
+
+une année négative ;
+
+un mois invalide ;
+
+un jour négatif.
+
+Dans ces cas, le comportement attendu est le lancement d’une IllegalArgumentException.
+
+![Tests paramétrés avec exceptions](testImages/date-next-exception.png)
+
+### Résultat final de l’exécution
+
+Après avoir complété les trois fichiers de test, j’ai exécuté la commande suivante dans le dossier ecs :
+
+    bin/test
+
+L’exécution finale montre que tous les tests ont réussi.
+
+![Résultat final des tests](testImages/date-tests2.png)
+
+Le résultat obtenu est le suivant :
+
+    58 tests found
+    58 tests started
+    58 tests successful
+    0 tests failed
+
+Cela confirme que les tests explicites, les tests paramétrés pour les cas valides, les tests paramétrés pour les exceptions, ainsi que les tests fournis pour la classe Bit fonctionnent correctement.

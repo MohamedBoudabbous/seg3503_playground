@@ -1,3 +1,14 @@
+error id: file://<WORKSPACE>/ecs/test/DateTest.java:_empty_/DateTest#assertEquals#
+file://<WORKSPACE>/ecs/test/DateTest.java
+empty definition using pc, found symbol in pc: _empty_/DateTest#assertEquals#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 205
+uri: file://<WORKSPACE>/ecs/test/DateTest.java
+text:
+```scala
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -7,7 +18,7 @@ class DateTest {
   @Test
   void tc01_regular_date_1700_06_20() {
     Date d = new Date(1700, 6, 20);
-    assertEquals(new Date(1700, 6, 21), d.nextDate());
+    assertEquals@@(new Date(1700, 6, 21), d.nextDate());
   }
 
   @Test
@@ -119,3 +130,9 @@ class DateTest {
     assertThrows(IllegalArgumentException.class, () -> new Date(1975, 6, -50));
   }
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/DateTest#assertEquals#

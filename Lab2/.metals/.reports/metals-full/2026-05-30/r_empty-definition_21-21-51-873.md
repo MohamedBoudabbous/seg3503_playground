@@ -1,6 +1,16 @@
+error id: file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java:_empty_/params#
+file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java
+empty definition using pc, found symbol in pc: _empty_/params#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 919
+uri: file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java
+text:
+```scala
 import java.util.LinkedList;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,11 +37,11 @@ public class DateNextDateOkTest
     this.expectedDay = expectedDay;
   }
 
-  @Parameters
+  @Paramaters
   public static List<Integer[]> data() {
-    List<Integer[]> params = new LinkedList<Integer[]>();
+    List<Integer[]> testCases = new LinkedList<Integer[]>();
     params.add(new Integer[] {1700, 6, 20, 1700, 6, 21});
-    params.add(new Integer[] {2005, 4, 15, 2005, 4, 16});
+    pa@@rams.add(new Integer[] {2005, 4, 15, 2005, 4, 16});
     params.add(new Integer[] {1901, 7, 20, 1901, 7, 21});
     params.add(new Integer[] {3456, 3, 27, 3456, 3, 28});
     params.add(new Integer[] {1500, 2, 17, 1500, 2, 18});
@@ -48,13 +58,18 @@ public class DateNextDateOkTest
     return params;
   }
 
-  @Test
   public void testNextDateOk(){
     Date actualDate = new Date(year, month, day);
     Date expectedDate = new Date(expectedYear, expectedMonth, expectedDay);
-     Assert.assertEquals(expectedDate, actualDate.nextDate());
+    assertEquals(expectedDate, actualDate.nextDate());
   }
 
 
 
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/params#

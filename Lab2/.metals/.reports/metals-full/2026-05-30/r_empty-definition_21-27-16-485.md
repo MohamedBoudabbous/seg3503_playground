@@ -1,6 +1,16 @@
+error id: file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java:_empty_/Paramaters#
+file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java
+empty definition using pc, found symbol in pc: _empty_/Paramaters#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 749
+uri: file://<WORKSPACE>/ecs/test/DateNextDateOkTest.java
+text:
+```scala
 import java.util.LinkedList;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +37,7 @@ public class DateNextDateOkTest
     this.expectedDay = expectedDay;
   }
 
-  @Parameters
+  @Paramat@@ers
   public static List<Integer[]> data() {
     List<Integer[]> params = new LinkedList<Integer[]>();
     params.add(new Integer[] {1700, 6, 20, 1700, 6, 21});
@@ -48,13 +58,18 @@ public class DateNextDateOkTest
     return params;
   }
 
-  @Test
   public void testNextDateOk(){
     Date actualDate = new Date(year, month, day);
     Date expectedDate = new Date(expectedYear, expectedMonth, expectedDay);
-     Assert.assertEquals(expectedDate, actualDate.nextDate());
+    assertEquals(expectedDate, actualDate.nextDate());
   }
 
 
 
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: _empty_/Paramaters#
