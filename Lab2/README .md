@@ -1,5 +1,12 @@
 # SEG3503 Lab 02
 
+Group 12: 
+Mohamed Boudabbous
+Wissam Elmasry
+
+
+**lien github:**   https://github.com/MohamedBoudabbous/seg3503_playground/tree/main/Lab2
+
 ## Exercice 1 - Exécution des tests par classes d'équivalence
 
 Dans cet exercice, j’ai exécuté manuellement plusieurs tests sur l’application d’enregistrement des utilisateurs.  
