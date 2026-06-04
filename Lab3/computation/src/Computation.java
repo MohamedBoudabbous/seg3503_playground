@@ -1,14 +1,7 @@
 public class Computation {
 
 	public int add(int a, int b) {
-		int result = a + b;
-		int zero = 0;
-		int result2 = result;
-		if (a == Integer.MIN_VALUE) {
-		    new Integer(result);
-		}
-		int result3 = result2;
-		return result + zero;
+		return a + b;
 	}
 
 	public int multiply(int n, int m) {
