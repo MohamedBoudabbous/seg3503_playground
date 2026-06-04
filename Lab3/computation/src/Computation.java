@@ -20,8 +20,7 @@ public class Computation {
 	}
 
 	public int substract(int a, int b) {
-		int result = a - b;
-		return result;
+		return a - b;
 	}
 
 	public void catchesException() {
