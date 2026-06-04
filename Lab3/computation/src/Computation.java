@@ -37,14 +37,10 @@ public class Computation {
 	}
 
 	public double divide(double divisor, double divident) {
-		double result;
 		if (divident == 0) {
-		    result = Double.POSITIVE_INFINITY;
-		} else {
-		    result = divisor / divident;
-		}
-		double result2 = result;
-		return result;
+		    return Double.POSITIVE_INFINITY;
+		} 
+		    return divisor / divident;
 	}
 
 	public int justALoop() {
