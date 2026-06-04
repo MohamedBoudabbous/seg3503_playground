@@ -17,16 +17,7 @@ public class Computation {
 	}
 
 	public void catchesException() {
-	  int i = 0;
-	  try {
-      if (i == 13) {
-          throw new NumberFormatException();
-      }
-      i = 23;
-	  } catch (NumberFormatException e) {
-	      System.out.println("Exception abgefangen");
-	  }
-	  i = 42;
+     
 	}
 
 	public double divide(double divisor, double divident) {
