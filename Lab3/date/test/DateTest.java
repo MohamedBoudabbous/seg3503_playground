@@ -149,4 +149,94 @@ class DateTest {
     );
   }
 
+
+  // test ajputes
+
+  @Test
+  void invalid_day_greater_than_31() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2024, 1, 32)
+    );
+  }
+
+  @Test
+  void invalid_day_31_for_thirty_day_month() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2024, 4, 31)
+    );
+  }
+
+  @Test
+  void invalid_february_30_on_leap_year() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(2024, 2, 30)
+    );
+  }
+
+  @Test
+  void valid_february_29_on_leap_year_divisible_by_400() {
+    Date date = new Date(2000, 2, 29);
+
+    assertEquals(2000, date.getYear());
+    assertEquals(2, date.getMonth());
+    assertEquals(29, date.getDay());
+  }
+
+  @Test
+  void invalid_february_29_on_century_non_leap_year() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1900, 2, 29)
+    );
+  }
+
+  @Test
+  void next_date_february_28_non_leap_year() {
+    Date today = new Date(2023, 2, 28);
+    Date expectedTomorrow = new Date(2023, 3, 1);
+
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+
+  @Test
+  void to_string_returns_expected_format() {
+    Date date = new Date(2024, 3, 15);
+
+    assertEquals("2024/March/15", date.toString());
+  }
+
+  @Test
+  void equals_returns_false_for_non_date_object() {
+    Date date = new Date(2024, 3, 15);
+
+    assertFalse(date.equals("2024/March/15"));
+  }
+
+  @Test
+  void equals_returns_false_for_different_year() {
+    Date date1 = new Date(2024, 3, 15);
+    Date date2 = new Date(2025, 3, 15);
+
+    assertFalse(date1.equals(date2));
+  }
+
+  @Test
+  void equals_returns_false_for_different_month() {
+    Date date1 = new Date(2024, 3, 15);
+    Date date2 = new Date(2024, 4, 15);
+
+    assertFalse(date1.equals(date2));
+  }
+
+  @Test
+  void equals_returns_false_for_different_day() {
+    Date date1 = new Date(2024, 3, 15);
+    Date date2 = new Date(2024, 3, 16);
+
+    assertFalse(date1.equals(date2));
+  }
+
 }
