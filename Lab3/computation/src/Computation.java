@@ -28,10 +28,6 @@ public class Computation {
 	}
 
 	public int justALoop() {
-    int a = 2;
-    for (int i = 0; i < 10;) {
-    	i = i + a;
-    }
-    return a;
+    	return 2;
 	}
 }
