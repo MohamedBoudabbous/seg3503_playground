@@ -1,3 +1,14 @@
+error id: file://<WORKSPACE>/date/src/Date.java:java/lang/IllegalArgumentException#
+file://<WORKSPACE>/date/src/Date.java
+empty definition using pc, found symbol in pc: java/lang/IllegalArgumentException#
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 1060
+uri: file://<WORKSPACE>/date/src/Date.java
+text:
+```scala
 public class Date {
 
 	/* Data fields */
@@ -46,25 +57,19 @@ public class Date {
 		if (day < 1) {
 			throw new IllegalArgumentException("day must greater or equal to 1.");
 		}
-
-		int maxDay = getMaxDayForMonth();
-
-		if (day > maxDay) {
-			throw new IllegalArgumentException("day must be less or equal to " + maxDay + ".");
+		if (day > 31){
+			throw new Illegal@@ArgumentException("day must less or equal to 31.");
 		}
-
+		if (isThirtyDayMonth() && day > 30) {
+			throw new IllegalArgumentException("day must less than 30 for month " + monthNames[month-1]);
+		}
+		if (this.month == 2 && isLeapYear() && day > 29) {
+			throw new IllegalArgumentException("day must less than 29 for month " + monthNames[month-1] + " on a leap year.");
+		}
+		if (this.month == 2 && !isLeapYear() && day > 28) {
+			throw new IllegalArgumentException("day must less than 28 for month " + monthNames[month-1] + " on a non leap year.");
+		}
 		this.day = day;
-	}
-	private int getMaxDayForMonth() {
-		if (month == 2) {
-			return isLeapYear() ? 29 : 28;
-		}
-
-		if (isThirtyDayMonth()) {
-			return 30;
-		}
-
-		return 31;
 	}
 
 	/**
@@ -117,8 +122,8 @@ public class Date {
 	private boolean isEndOfMonth() {
 		boolean leap = isLeapYear();
 		return day == 31
-				|| (day == 30 && isThirtyDayMonth())
-				|| (month == 2 && ((day == 29 && leap) || (day == 28 && !leap)));
+ (day == 30 && isThirtyDayMonth())
+ (month == 2 && ((day == 29 && leap) || (day == 28 && !leap)));
 	}
 
 	/**
@@ -155,3 +160,10 @@ public class Date {
 	}
 
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: java/lang/IllegalArgumentException#
