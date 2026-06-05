@@ -1,3 +1,14 @@
+error id: file://<WORKSPACE>/date/src/Date.java:
+file://<WORKSPACE>/date/src/Date.java
+empty definition using pc, found symbol in pc: 
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+
+offset: 3204
+uri: file://<WORKSPACE>/date/src/Date.java
+text:
+```scala
 public class Date {
 
 	/* Data fields */
@@ -87,13 +98,9 @@ public class Date {
 	 *
 	 */
 	public Date nextDate() {
-		int nextYear = year;
-		int nextMonth = month;
-		int nextDay = day + 1;
-
+		int nextYear = year, nextMonth = month, nextDay = day + 1;
 		if (isEndOfMonth()) {
 			nextDay = 1;
-
 			if (month == 12) {
 				nextYear++;
 				nextMonth = 1;
@@ -101,9 +108,9 @@ public class Date {
 				nextMonth++;
 			}
 		}
-
 		return new Date(nextYear, nextMonth, nextDay);
 	}
+
 	/**
 	 *
 	 * Check if the date is a end of a month.
@@ -111,8 +118,8 @@ public class Date {
 	private boolean isEndOfMonth() {
 		boolean leap = isLeapYear();
 		return day == 31
-				|| (day == 30 && isThirtyDayMonth())
-				|| (month == 2 && ((day == 29 && leap) || (day == 28 && !leap)));
+ (day == 30 && isThirtyDayMonth())
+ (month == 2 && ((day == 29 && leap) || (day == 28 && !leap)));
 	}
 
 	/**
@@ -130,22 +137,24 @@ public class Date {
 		if (year % 100 == 0) {
 			return year % 400 == 0;
 		}
-		return year % 4 == 0;
+		return year@@ % 4 == 0;
 	}
 
 	public String toString() {
-		return year + "/" + monthNames[month - 1] + "/" + day;
+		return year + "/" + monthNames[month-1] + "/" + day;
 	}
 
 	public boolean equals(Object obj) {
-		if (!(obj instanceof Date)) {
-			return false;
-		}
-
-		Date otherDate = (Date) obj;
-		return year == otherDate.getYear()
-				&& month == otherDate.getMonth()
-				&& day == otherDate.getDay();
+		if (! (obj instanceof Date)) return false;
+		Date od = (Date)obj;
+		return year == od.getYear() && month == od.getMonth()  && day == od.getDay();
 	}
 
 }
+
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: 
