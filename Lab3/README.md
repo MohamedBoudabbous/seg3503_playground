@@ -213,3 +213,119 @@ La classe `DateNextDateExceptionTest` reste à 91%. Cette classe continue de val
 La classe `DateNextDateOkTest` reste à 100%. Elle couvre déjà très bien les scénarios valides liés à `nextDate()`, comme le passage au jour suivant, au mois suivant et à l’année suivante. Les nouveaux tests ne modifient pas cette classe, mais ils complètent la couverture générale du projet en ajoutant des cas de validation, d’affichage et de comparaison.
 
 En conclusion, l’ajout de tests a fortement amélioré la couverture de `Date.java`. La couverture des instructions de la classe `Date` est passée de 85% à 100%, et la couverture des branches est passée de 79% à 94%. Le rapport montre donc que les nouveaux tests ont été utiles, surtout pour couvrir les cas limites et les chemins conditionnels. Cependant, une couverture de branches de 100% n’est pas encore atteinte : il reste 4 branches manquées sur 68. Cela indique que certains chemins logiques très précis, probablement liés à des conditions composées dans les méthodes privées comme `isEndOfMonth()` ou `isThirtyDayMonth()`, restent difficiles à couvrir entièrement sans ajouter encore plus de cas ciblés. Cette étape montre donc que les tests ajoutés améliorent fortement la couverture, mais qu’atteindre 100% partout n’est pas automatiquement garanti.
+
+
+
+## Refactoring de la classe Date
+
+Après avoir ajouté des tests pour améliorer la couverture de `Date.java`, j’ai commencé le refactoring de la classe `Date`. L’objectif était de simplifier le code, de réduire la duplication et d’améliorer la lisibilité, sans modifier le comportement attendu. Après chaque changement, les tests JUnit ont été relancés afin de vérifier que la classe fonctionnait toujours correctement.
+
+### Refactoring de la méthode isThirtyDayMonth
+
+Avant le refactoring, la méthode `isThirtyDayMonth` utilisait une structure `if/else` pour retourner `true` ou `false`. Cette structure était inutile, car la condition elle-même produit déjà une valeur booléenne.
+
+![isThirtyDayMonth avant refactoring](screenshots/refactoringDate/isThirtyDayMonth_avant.png)
+
+Après le refactoring, la méthode retourne directement le résultat de la condition. Le comportement reste identique, mais le code devient plus court et plus clair.
+
+![isThirtyDayMonth après refactoring](screenshots/refactoringDate/isThirtyDayMonth_apres.png)
+
+### Refactoring de la méthode isEndOfMonth
+
+Avant le refactoring, la méthode `isEndOfMonth` utilisait aussi une structure `if/else` pour retourner `true` ou `false`. La condition était longue, mais le `if/else` n’était pas nécessaire puisque le résultat de cette condition pouvait être retourné directement.
+
+![isEndOfMonth avant refactoring](screenshots/refactoringDate/isEndOfMonth_avant.png)
+
+Après le refactoring, la méthode retourne directement la condition. La variable `leap` est conservée pour éviter de rappeler plusieurs fois `isLeapYear()` et pour garder la condition plus lisible. Cette modification garde la même logique tout en simplifiant la structure de la méthode.
+
+![isEndOfMonth après refactoring](screenshots/refactoringDate/isEndOfMonth_apres.png)
+
+### Refactoring de la méthode nextDate
+
+Avant le refactoring, la méthode `nextDate` déclarait plusieurs variables sur une seule ligne. Même si le code fonctionnait, cette écriture rendait la lecture moins claire, surtout parce que `nextYear`, `nextMonth` et `nextDay` peuvent ensuite être modifiés selon les cas.
+
+![nextDate avant refactoring](screenshots/refactoringDate/nextDate_avant.png)
+
+Après le refactoring, chaque variable est déclarée sur une ligne séparée. Cette modification ne change pas le comportement de la méthode, mais elle rend le déroulement de la logique plus facile à suivre, notamment pour les cas de fin de mois et de fin d’année.
+
+![nextDate après refactoring](screenshots/refactoringDate/nextDate_apres.png)
+
+### Refactoring de la méthode setDay
+
+Le refactoring le plus important concerne la méthode `setDay`. Avant le refactoring, cette méthode contenait plusieurs conditions successives pour vérifier les cas particuliers : jour inférieur à 1, jour supérieur à 31, mois de 30 jours, février en année bissextile et février en année non bissextile. Cette version fonctionnait, mais elle mélangeait deux responsabilités : déterminer le nombre maximal de jours du mois et valider la valeur du jour.
+
+![setDay avant refactoring](screenshots/refactoringDate/setDay_avant.png)
+
+Après le refactoring, la logique a été simplifiée en extrayant une méthode privée `getMaxDayForMonth`. La méthode `setDay` vérifie maintenant seulement si le jour est inférieur à 1, calcule le nombre maximal de jours permis pour le mois courant, puis vérifie si le jour dépasse cette limite. Cette organisation rend le code plus clair, plus court et plus facile à maintenir.
+
+![setDay après refactoring](screenshots/refactoringDate/setDay_apres.png)
+
+### Refactoring de la méthode equals
+
+Avant le refactoring, la méthode `equals` utilisait une condition sans accolades et un nom de variable peu descriptif. La logique était correcte, mais la lisibilité pouvait être améliorée.
+
+![equals avant refactoring](screenshots/refactoringDate/equals_avant.png)
+
+Après le refactoring, des accolades ont été ajoutées et la variable temporaire a été renommée pour rendre le code plus compréhensible. La comparaison reste exactement la même : deux objets `Date` sont considérés égaux seulement si l’année, le mois et le jour sont identiques.
+
+![equals après refactoring](screenshots/refactoringDate/equals_apres.png)
+
+### Refactoring de la méthode toString
+
+La méthode `toString` a seulement été légèrement nettoyée au niveau de l’espacement dans l’accès au tableau `monthNames`. Ce changement est mineur, mais il rend l’écriture plus cohérente avec le reste du fichier.
+
+![toString avant refactoring](screenshots/refactoringDate/toString_avant.png)
+
+![toString après refactoring](screenshots/refactoringDate/toString_apres.png)
+
+### Résultat du refactoring
+
+Le refactoring de `Date` a principalement amélioré la lisibilité et la structure du code. La méthode `setDay` est devenue plus simple grâce à l’extraction de `getMaxDayForMonth`, tandis que `isThirtyDayMonth` et `isEndOfMonth` ont été simplifiées en retournant directement leurs conditions. Les autres changements sont plus légers, mais ils rendent le code plus cohérent et plus facile à comprendre. Tous les tests ont continué à passer après les modifications, ce qui confirme que le comportement attendu de la classe a été conservé.
+
+
+
+## Analyse des résultats après refactoring de Date
+
+Après le refactoring de `Date.java`, j’ai recompilé le projet, relancé tous les tests JUnit, puis généré un nouveau rapport JaCoCo. Le but était de vérifier que les modifications de structure n’avaient pas dégradé le comportement du programme ni la couverture de code.
+
+![Rapport global après refactoring de Date](screenshots/ApresRefactoringdeDate/couverture.png)
+
+Le rapport global après refactoring indique une couverture des instructions de 93%, avec 118 instructions manquées sur 1740. La couverture des branches est aussi de 93%, avec 4 branches manquées sur 58. Avant le refactoring, après l’ajout des tests, le rapport indiquait déjà une couverture globale de 93%. La couverture globale est donc restée stable, ce qui est cohérent avec l’objectif du refactoring : améliorer la structure du code sans modifier sa logique.
+
+![Vue du package default après refactoring de Date](screenshots/ApresRefactoringdeDate/default.png)
+
+Dans la vue du package `default`, la classe `Date` atteint toujours 100% de couverture des instructions. Cela confirme que le refactoring n’a pas retiré de comportement testé et que les tests ajoutés couvrent encore toutes les instructions de la classe principale. La couverture des branches de `Date` est maintenant de 93%, avec 4 branches manquées sur 58. Les classes de tests conservent aussi des résultats similaires : `DateNextDateOkTest` reste à 100%, `DateNextDateExceptionTest` reste à 91%, `DateExceptionTest` reste à 85%, et `DateTest` reste à 86%.
+
+![Couverture de la classe Date après refactoring](screenshots/ApresRefactoringdeDate/Date.png)
+
+La vue détaillée de la classe `Date` montre que toutes les méthodes ont une couverture des instructions de 100%. Cela inclut le constructeur, les accesseurs, `setDay`, `setMonth`, `setYear`, `nextDate`, `isLeapYear`, `toString` et `equals`. Les méthodes refactorisées restent donc entièrement exécutées par les tests. Les quelques branches manquées se situent surtout dans des conditions composées, notamment dans des méthodes comme `isEndOfMonth`, `isThirtyDayMonth` et `setMonth`.
+
+![Analyse de Date.java après refactoring - Partie 1](screenshots/ApresRefactoringdeDate/Date_java_1.png)
+
+La première partie de `Date.java` montre que le constructeur, les accesseurs et la méthode `setDay` sont bien couverts. Le refactoring de `setDay` a rendu le code plus simple : au lieu de traiter séparément chaque cas particulier dans plusieurs conditions, la méthode utilise maintenant `getMaxDayForMonth` pour déterminer la limite maximale du mois. Cette extraction améliore la lisibilité tout en conservant une couverture complète des instructions.
+
+![Analyse de Date.java après refactoring - Partie 2](screenshots/ApresRefactoringdeDate/Date_java_2.png)
+
+La deuxième partie du fichier montre que `getMaxDayForMonth`, `setMonth`, `setYear` et `nextDate` sont également bien exécutées. La méthode `nextDate` reste couverte après le refactoring, et sa logique est plus lisible grâce à la séparation des variables `nextYear`, `nextMonth` et `nextDay`. Certaines branches restent jaunes, ce qui indique que certaines conditions ne sont pas couvertes dans toutes leurs combinaisons possibles, mais le comportement principal reste bien testé.
+
+![Analyse de Date.java après refactoring - Partie 3](screenshots/ApresRefactoringdeDate/Date_java_3.png)
+
+La dernière partie du fichier confirme que `isLeapYear`, `toString` et `equals` sont couvertes. La méthode `equals` est plus lisible après l’ajout d’accolades et le renommage de la variable temporaire. La méthode `toString` reste couverte par les tests ajoutés. Le rapport montre cependant encore des branches partielles dans certaines conditions composées, ce qui explique pourquoi la couverture des branches n’atteint pas 100%.
+
+![Couverture de DateTest après refactoring](screenshots/ApresRefactoringdeDate/DateTest.png)
+
+La vue de `DateTest` montre que les nouveaux tests ajoutés sont toujours exécutés après le refactoring. Certains éléments liés aux expressions lambda utilisées avec `assertThrows` apparaissent encore comme non couverts dans le rapport. Cela n’empêche pas la classe `Date` d’être entièrement couverte au niveau des instructions, mais cela explique pourquoi la couverture globale du projet ne monte pas à 100%.
+
+![Couverture de DateExceptionTest après refactoring](screenshots/ApresRefactoringdeDate/DateExceptionTest.png)
+
+La classe `DateExceptionTest` reste à 85% de couverture. Elle n’a pas été modifiée durant le refactoring, donc son résultat reste cohérent avec les rapports précédents.
+
+![Couverture de DateNextDateExceptionTest après refactoring](screenshots/ApresRefactoringdeDate/DateNextDateExceptionTest.png)
+
+La classe `DateNextDateExceptionTest` reste à 91% de couverture. Elle continue de couvrir plusieurs cas invalides, mais certaines parties du fichier de test ne sont pas entièrement couvertes.
+
+![Couverture de DateNextDateOkTest après refactoring](screenshots/ApresRefactoringdeDate/DateNextDateOkTest.png)
+
+La classe `DateNextDateOkTest` reste à 100% de couverture. Cela confirme que les scénarios valides de calcul de la date suivante continuent à passer après le refactoring.
+
+En conclusion, le refactoring de `Date.java` n’a pas dégradé la couverture. La classe `Date` conserve 100% de couverture des instructions, tandis que la couverture des branches reste élevée à 93%. La couverture globale du projet reste à 93%. Le refactoring a donc surtout amélioré la lisibilité, la structure et la maintenabilité du code, sans modifier son comportement ni réduire l’efficacité des tests.
