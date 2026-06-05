@@ -5,11 +5,7 @@ public class Computation {
 	}
 
 	public int multiply(int n, int m) {
-    int result = 0;
-    for (int j = 0; j < m; j++) {
-          result += n;
-      }
-    return result;
+    	return n * m;
 	}
 
 	public int substract(int a, int b) {
