@@ -2018,3 +2018,70 @@ WARNING: Unmatched cancel notification for request id 2110
 2026.06.04 23:34:52 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/src/Date.java. Using fallback presentation compiler.
 2026.06.04 23:35:00 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/src/Date.java. Using fallback presentation compiler.
 2026.06.04 23:35:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/src/Date.java. Using fallback presentation compiler.
+2026.06.05 00:02:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:03 WARN  no build target for: /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java
+2026.06.05 00:02:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:03 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:10 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  Created report: Optional[file:///Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java]
+2026.06.05 00:02:16 INFO  Created report: Optional[file:///Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java]
+2026.06.05 00:02:16 INFO  empty definition using pc, found symbol in pc: java/lang/IllegalArgumentException# (full report at: "/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/.metals/.reports/metals-full/2026-06-05/r_empty-definition_00-02-16-376.md")
+2026.06.05 00:02:16 INFO  empty definition using pc, found symbol in pc: _empty_/Date# (full report at: "/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/.metals/.reports/metals-full/2026-06-05/r_empty-definition_00-02-16-376.md")
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  empty definition using pc, found symbol in pc: java/lang/IllegalArgumentException# (full report at: "/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/.metals/.reports/metals-full/2026-06-05/r_empty-definition_00-02-16-376.md")
+2026.06.05 00:02:16 INFO  Created report: Optional[file:///Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java]
+2026.06.05 00:02:16 INFO  empty definition using pc, found symbol in pc: _empty_/DateTest#assertThrows# (full report at: "/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/.metals/.reports/metals-full/2026-06-05/r_empty-definition_00-02-16-459.md")
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:16 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:44 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:46 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:46 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:47 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:47 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:02:47 INFO  empty definition using pc, found symbol in pc: _empty_/Date# (full report at: "/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/.metals/.reports/metals-full/2026-06-05/r_empty-definition_00-02-16-376.md")
+2026.06.05 00:02:47 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:09 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:09 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:09 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:11 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:11 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+2026.06.05 00:03:35 INFO  no build target found for /Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/test/DateTest.java. Using fallback presentation compiler.
+Jun 05, 2026 12:03:52 A.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "class:/Users/bouda/Desktop/SEG3503/Lab/Lab1/SEG3503_Laboratoire1/seg3503_playground/Lab3/date/bin/DateTest.class"
+  ]
+}
+java.nio.file.FileSystemNotFoundException: Provider "class" not installed
+	at java.base/java.nio.file.Path.of(Path.java:213)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:149)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:209)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:787)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:784)
+	at scala.meta.internal.metals.WorkspaceLspService.didFocus(WorkspaceLspService.scala:808)
+	at scala.meta.metals.lsp.DelegatingScalaService.didFocus(DelegatingScalaService.scala:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$recursiveFindRpcMethods$0(GenericEndpoint.java:65)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:160)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:225)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:192)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:189)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:97)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:97)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+

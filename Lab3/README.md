@@ -178,7 +178,31 @@ Enfin, `DateNextDateOkTest` atteint 100% de couverture. Cela indique que les tes
 
 En conclusion, avant toute modification ou refactorisation de `Date.java`, la couverture est déjà élevée, mais elle n’est pas complète. Les résultats montrent que les tests existants couvrent bien les scénarios standards, notamment la création de dates valides et le calcul de la date suivante. Toutefois, plusieurs cas limites restent à ajouter, notamment pour `setDay(int)`, `isEndOfMonth()`, `isThirtyDayMonth()`, `toString()` et `equals(Object)`. La prochaine étape sera donc d’ajouter des tests ciblés afin d’améliorer la couverture des instructions, des branches et des conditions avant de commencer le refactoring de `Date.java`.
 
+## Tests rajoutés pour Date
 
+Après l’analyse du premier rapport JaCoCo de la classe `Date`, j’ai ajouté plusieurs tests dans `DateTest.java` afin de couvrir les parties du code qui étaient encore non exécutées ou partiellement couvertes. Les tests ajoutés ciblent principalement les cas limites de validation des jours, les années bissextiles, la méthode `toString()` et la méthode `equals(Object)`.
+
+![Tests ajoutés - partie 1](screenshots/ApresAjoutTestsDate/test1.png)
+
+La première série de tests ajoutés concerne la validation des jours invalides. Le test `invalid_day_greater_than_31` vérifie qu’une exception est lancée lorsqu’un jour supérieur à 31 est utilisé. Le test `invalid_day_31_for_thirty_day_month` vérifie le cas d’un jour 31 dans un mois qui contient seulement 30 jours, comme avril. Le test `invalid_february_30_on_leap_year` couvre le cas de février 30 pendant une année bissextile, ce qui reste invalide. Ces tests permettent de mieux couvrir la méthode `setDay(int)`, qui était l’une des méthodes les moins couvertes dans le rapport initial.
+
+La première série contient aussi le test `valid_february_29_on_leap_year_divisible_by_400`. Ce test vérifie qu’une date comme le 29 février 2000 est acceptée, car 2000 est divisible par 400 et correspond donc à une année bissextile. Ce test permet de couvrir un cas important de la méthode `isLeapYear()`.
+
+![Tests ajoutés - partie 2](screenshots/ApresAjoutTestsDate/test2.png)
+
+La deuxième série de tests vise d’autres cas limites. Le test `invalid_february_29_on_century_non_leap_year` vérifie que le 29 février 1900 est refusé, car 1900 est divisible par 100 mais pas par 400. Ce cas est important pour couvrir correctement la logique des années bissextiles.
+
+Le test `next_date_february_28_non_leap_year` vérifie que le jour suivant le 28 février 2023 est bien le 1er mars 2023. Ce test améliore la couverture des conditions dans `isEndOfMonth()` et de la logique de `nextDate()`.
+
+Le test `to_string_returns_expected_format` vérifie que la méthode `toString()` retourne bien une chaîne au format attendu, par exemple `2024/March/15`. Avant l’ajout de ce test, la méthode `toString()` n’était pas couverte dans le rapport JaCoCo.
+
+Le test `equals_returns_false_for_non_date_object` vérifie que la méthode `equals(Object)` retourne `false` lorsqu’on compare une date avec un objet qui n’est pas une instance de `Date`. Cela permet de couvrir la première condition de la méthode `equals`.
+
+![Tests ajoutés - partie 3](screenshots/ApresAjoutTestsDate/test3.png)
+
+La troisième série de tests complète la couverture de `equals(Object)`. Les tests `equals_returns_false_for_different_year`, `equals_returns_false_for_different_month` et `equals_returns_false_for_different_day` vérifient que deux dates sont considérées différentes si elles n’ont pas la même année, le même mois ou le même jour. Ces tests permettent de couvrir plusieurs chemins logiques dans la condition finale de `equals`.
+
+Globalement, les tests ajoutés ont permis de couvrir plusieurs cas qui n’étaient pas vérifiés par la suite initiale. Ils améliorent surtout la couverture des méthodes `setDay(int)`, `isLeapYear()`, `isEndOfMonth()`, `toString()` et `equals(Object)`. Après leur ajout, la couverture de la classe `Date` est passée à 100% pour les instructions, et la couverture des branches a fortement augmenté. Cela montre que les nouveaux tests ciblent bien les parties faibles du code identifiées dans le rapport JaCoCo initial.
 
 ## Analyse des résultats après ajout de tests pour Date
 
