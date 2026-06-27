@@ -1,3 +1,10 @@
+
+# SEG3503 Lab 04
+
+Group 12: 
+Mohamed Boudabbous 300376202
+Wissam Elmasry
+
 ## Analyse des résultats dans le navigateur
 
 Après avoir exécuté les tests JUnit avec JaCoCo, j’ai généré le rapport de couverture et je l’ai ouvert dans le navigateur avec le fichier `report/index.html`. Cette étape permet d’observer visuellement quelles parties du code ont été exécutées par les tests et quelles parties restent non couvertes.
@@ -353,3 +360,13 @@ La classe `DateNextDateExceptionTest` reste à 91% de couverture. Elle continue 
 La classe `DateNextDateOkTest` reste à 100% de couverture. Cela confirme que les scénarios valides de calcul de la date suivante continuent à passer après le refactoring.
 
 En conclusion, le refactoring de `Date.java` n’a pas dégradé la couverture. La classe `Date` conserve 100% de couverture des instructions, tandis que la couverture des branches reste élevée à 93%. La couverture globale du projet reste à 93%. Le refactoring a donc surtout amélioré la lisibilité, la structure et la maintenabilité du code, sans modifier son comportement ni réduire l’efficacité des tests.
+
+
+## Utilisation de Git
+
+Tout au long du laboratoire, j’ai utilisé Git afin de sauvegarder progressivement mon travail. J’ai effectué des commits après les étapes importantes, notamment après la validation de l’environnement, tout au long du refactoring `Computation`. (apres le refacotring de chaque méthode), après l’ajout des tests pour `Date`, puis tout au long du refactoring `Date.java` (apres le refacotring de chaque méthode). Cette approche m’a permis de conserver un historique clair des modifications et de vérifier régulièrement que les tests continuaient de passer après chaque changement.
+
+
+## Possibilité d’atteindre 100% de couverture
+
+Après l’ajout des tests, la classe `Date` atteint 100% de couverture des instructions. Cependant, la couverture des branches n’atteint pas 100%, car certaines conditions composées génèrent encore des branches partielles dans JaCoCo. Il est donc possible d’atteindre 100% pour les instructions de `Date`, mais pas automatiquement 100% pour toutes les branches sans ajouter encore plus de cas très ciblés. Dans ce laboratoire, la meilleure couverture obtenue pour `Date` est de 100% pour les instructions et 93% pour les branches après refactoring.
