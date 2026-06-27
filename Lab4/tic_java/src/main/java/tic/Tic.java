@@ -7,15 +7,21 @@ public class Tic {
     private final String[][] board;
     private final int rows;
     private final int cols;
+    private String turn;
 
     public Tic(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
+        this.turn = "X";
         this.board = new String[rows][cols];
 
         for (int row = 0; row < rows; row++) {
             Arrays.fill(this.board[row], "_");
         }
+    }
+
+    public String getTurn() {
+        return turn;
     }
 
     public String cellAt(int row, int col) {
@@ -30,8 +36,13 @@ public class Tic {
             return false;
         }
 
-        board[row][col] = "X";
+        board[row][col] = turn;
+        switchTurn();
         return true;
+    }
+
+    private void switchTurn() {
+        turn = turn.equals("X") ? "O" : "X";
     }
 
     private void validatePosition(int row, int col) {
@@ -73,12 +84,13 @@ public class Tic {
 
         return rows == tic.rows
                 && cols == tic.cols
+                && Objects.equals(turn, tic.turn)
                 && Arrays.deepEquals(board, tic.board);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(rows, cols);
+        int result = Objects.hash(rows, cols, turn);
         result = 31 * result + Arrays.deepHashCode(board);
         return result;
     }
