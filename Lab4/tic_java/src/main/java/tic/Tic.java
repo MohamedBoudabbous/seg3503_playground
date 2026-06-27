@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Tic {
+    private static final String EMPTY_CELL = "_";
+    private static final String FIRST_PLAYER = "X";
+    private static final String SECOND_PLAYER = "O";
+
     private final String[][] board;
     private final int rows;
     private final int cols;
@@ -12,11 +16,11 @@ public class Tic {
     public Tic(int rows, int cols) {
         this.rows = rows;
         this.cols = cols;
-        this.turn = "X";
+        this.turn = FIRST_PLAYER;
         this.board = new String[rows][cols];
 
         for (int row = 0; row < rows; row++) {
-            Arrays.fill(this.board[row], "_");
+            Arrays.fill(this.board[row], EMPTY_CELL);
         }
     }
 
@@ -32,7 +36,7 @@ public class Tic {
     public boolean place(int row, int col) {
         validatePosition(row, col);
 
-        if (!board[row][col].equals("_")) {
+        if (!isCellEmpty(row, col)) {
             return false;
         }
 
@@ -44,7 +48,7 @@ public class Tic {
     public boolean isEmpty() {
         for (String[] row : board) {
             for (String cell : row) {
-                if (!cell.equals("_")) {
+                if (!cell.equals(EMPTY_CELL)) {
                     return false;
                 }
             }
@@ -56,7 +60,7 @@ public class Tic {
     public boolean isFull() {
         for (String[] row : board) {
             for (String cell : row) {
-                if (cell.equals("_")) {
+                if (cell.equals(EMPTY_CELL)) {
                     return false;
                 }
             }
@@ -65,8 +69,12 @@ public class Tic {
         return true;
     }
 
+    private boolean isCellEmpty(int row, int col) {
+        return board[row][col].equals(EMPTY_CELL);
+    }
+
     private void switchTurn() {
-        turn = turn.equals("X") ? "O" : "X";
+        turn = turn.equals(FIRST_PLAYER) ? SECOND_PLAYER : FIRST_PLAYER;
     }
 
     private void validatePosition(int row, int col) {
