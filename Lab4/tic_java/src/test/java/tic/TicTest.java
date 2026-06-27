@@ -13,4 +13,10 @@ class TicTest {
 
         assertEquals(board, board2);
     }
+    @Test
+    void emptyBoardHasReadableString() {
+        Tic board = new Tic(3, 3);
+
+        assertEquals("_|_|_\n_|_|_\n_|_|_", board.toString());
+    }
 }
