@@ -10,6 +10,28 @@ public class Tic {
         this.cols = cols;
     }
 
+    
+    @Override
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+
+        for (int row = 0; row < rows; row++) {
+            if (row > 0) {
+                output.append("\n");
+            }
+
+            for (int col = 0; col < cols; col++) {
+                if (col > 0) {
+                    output.append("|");
+                }
+
+                output.append("_");
+            }
+        }
+
+        return output.toString();
+    }
+    
     @Override
     public boolean equals(Object other) {
         if (this == other) {
