@@ -43,4 +43,22 @@ class TicTest {
         board.place(0, 1);
         assertEquals("X", board.getTurn());
     }
+
+    @Test
+    void boardCanDetectEmptyAndFullStates() {
+        Tic board = new Tic(1, 2);
+
+        assertTrue(board.isEmpty());
+        assertFalse(board.isFull());
+
+        board.place(0, 0);
+
+        assertFalse(board.isEmpty());
+        assertFalse(board.isFull());
+
+        board.place(0, 1);
+
+        assertFalse(board.isEmpty());
+        assertTrue(board.isFull());
+    }
 }
