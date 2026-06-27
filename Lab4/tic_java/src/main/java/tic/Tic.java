@@ -41,6 +41,30 @@ public class Tic {
         return true;
     }
 
+    public boolean isEmpty() {
+        for (String[] row : board) {
+            for (String cell : row) {
+                if (!cell.equals("_")) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isFull() {
+        for (String[] row : board) {
+            for (String cell : row) {
+                if (cell.equals("_")) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
     private void switchTurn() {
         turn = turn.equals("X") ? "O" : "X";
     }
