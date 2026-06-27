@@ -30,4 +30,17 @@ class TicTest {
         assertEquals("X", board.cellAt(1, 1));
         assertEquals("_|_|_\n_|X|_\n_|_|_", board.toString());
     }
+
+    @Test
+    void turnStartsWithXAndSwitchesAfterMove() {
+        Tic board = new Tic(3, 3);
+
+        assertEquals("X", board.getTurn());
+
+        board.place(0, 0);
+        assertEquals("O", board.getTurn());
+
+        board.place(0, 1);
+        assertEquals("X", board.getTurn());
+    }
 }
