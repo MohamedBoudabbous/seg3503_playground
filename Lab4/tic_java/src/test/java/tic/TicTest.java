@@ -13,10 +13,21 @@ class TicTest {
 
         assertEquals(board, board2);
     }
+
     @Test
     void emptyBoardHasReadableString() {
         Tic board = new Tic(3, 3);
 
         assertEquals("_|_|_\n_|_|_\n_|_|_", board.toString());
+    }
+
+    @Test
+    void placingMoveWritesXAtCell() {
+        Tic board = new Tic(3, 3);
+
+        assertTrue(board.place(1, 1));
+
+        assertEquals("X", board.cellAt(1, 1));
+        assertEquals("_|_|_\n_|X|_\n_|_|_", board.toString());
     }
 }
