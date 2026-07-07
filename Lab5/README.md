@@ -145,3 +145,5 @@ Cette étape a confirmé que l’interface web était correctement connectée au
 Ensuite, le stub a été remplacé par une vraie implémentation capable de calculer les notes à partir des données saisies par l’utilisateur. La version finale de l’application calcule maintenant correctement le pourcentage final, la lettre correspondante et la note numérique.
 
 
+## twiter
+on implmente les tes
