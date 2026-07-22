@@ -1,6 +1,6 @@
 # SEG3503 Lab 06/07 : Selenium WebDriver
 
-Groupe : travail individuel
+Groupe : 9
 
 Mohamed Boudabbous
 
@@ -22,20 +22,47 @@ Dans ce laboratoire, j’ai d’abord compilé et exécuté l’application avec
 
 ### Compilation et exécution de l’application
 
-Le projet a d’abord été compilé avec la commande suivante :
+J’ai d’abord vérifié les versions de Maven et de Java installées sur mon ordinateur avec la commande suivante :
+
+```bash
+mvn --version
+```
+
+La sortie confirme que Maven est correctement installé et qu’il utilise une version compatible de Java.
+
+![Version de Maven](./screenshots/maven_version.png)
+
+Le projet a ensuite été compilé avec la commande suivante :
 
 ```bash
 mvn compile
 ```
 
-L’application a ensuite été préparée et exécutée avec les commandes suivantes :
+La compilation se termine correctement avec le résultat `BUILD SUCCESS`.
+
+![Résultat de la compilation](./screenshots/maven_compile.png)
+
+J’ai ensuite préparé le fichier exécutable de l’application sans lancer les tests avec la commande suivante :
 
 ```bash
 mvn package -DskipTests
+```
+
+Cette commande compile le projet et crée le fichier `BookstoreApp-0.1.0.jar` dans le répertoire `target`.
+
+![Résultat de la création du package](./screenshots/maven_package.png)
+
+L’application a ensuite été lancée avec la commande suivante :
+
+```bash
 java -jar ./target/BookstoreApp-0.1.0.jar
 ```
 
-Après le démarrage du serveur, l’application est accessible dans le navigateur à l’adresse suivante :
+Le message `Press Enter to stop server` confirme que le serveur de l’application a été lancé.
+
+![Démarrage du serveur](./screenshots/demarrage_serveur.png)
+
+Après le démarrage du serveur, l’application est accessible dans Google Chrome à l’adresse suivante :
 
 ```text
 http://localhost:8080
