@@ -25,6 +25,7 @@ class ExampleSeleniumTest {
   public static void setUpBeforeClass() throws Exception {
     ProcessBuilder pb = new ProcessBuilder("java", "-jar", "bookstore5.jar");
     server = pb.start();
+    Thread.sleep(5000);
   }
 
   @BeforeEach
@@ -75,6 +76,27 @@ class ExampleSeleniumTest {
     actual = welcome.getText();
     assertEquals(expected, getWords(actual)[0]);
   }
+  @Test
+void test3BrowseWholeCatalogue() {
+  driver.findElement(By.id("searchBtn")).click();
+
+  WebDriverWait wait = new WebDriverWait(driver, 10);
+  WebElement firstBook = wait.until(
+      ExpectedConditions.visibilityOfElementLocated(
+          By.id("title-hall001")
+      )
+  );
+
+  assertEquals(
+      "Core Servlets and JavaServer Pages 2nd Edition (Volume 1)",
+      firstBook.getText()
+  );
+
+  assertEquals(
+      5,
+      driver.findElements(By.className("orderbt")).size()
+  );
+}
 
   private String[] getWords(String s) {
     return s.split("\\s+");
