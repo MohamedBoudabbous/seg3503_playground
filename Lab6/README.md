@@ -6,8 +6,6 @@ Mohamed Boudabbous
 
 Numéro étudiant : 300376202
 
-Groupe 9
-
 lien github: https://github.com/MohamedBoudabbous/seg3503_playground/tree/main/Lab6
 
 ## BookstoreApp
@@ -38,9 +36,11 @@ Le projet a ensuite été compilé avec la commande suivante :
 mvn compile
 ```
 
-La compilation se termine correctement avec le résultat `BUILD SUCCESS`.
+La sortie de la compilation est présentée dans les deux captures suivantes. La compilation se termine correctement avec le résultat `BUILD SUCCESS`.
 
-![Résultat de la compilation](./screenshots/maven_compile.png)
+![Résultat de la compilation - partie 1](./screenshots/maven_compile_1.png)
+
+![Résultat de la compilation - partie 2](./screenshots/maven_compile_2.png)
 
 J’ai ensuite préparé le fichier exécutable de l’application sans lancer les tests avec la commande suivante :
 
@@ -48,9 +48,11 @@ J’ai ensuite préparé le fichier exécutable de l’application sans lancer l
 mvn package -DskipTests
 ```
 
-Cette commande compile le projet et crée le fichier `BookstoreApp-0.1.0.jar` dans le répertoire `target`.
+Cette commande compile le projet et crée le fichier `BookstoreApp-0.1.0.jar` dans le répertoire `target`. La sortie de la commande est présentée dans les deux captures suivantes.
 
-![Résultat de la création du package](./screenshots/maven_package.png)
+![Résultat de la création du package - partie 1](./screenshots/maven_package_1.png)
+
+![Résultat de la création du package - partie 2](./screenshots/maven_package_2.png)
 
 L’application a ensuite été lancée avec la commande suivante :
 
